@@ -27,24 +27,13 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatDialogModule } from '@angular/material/dialog';
 import { CidadeComponent } from './cidade/cidade.component';
-
 import { AgmCoreModule } from '@agm/core';
-import { MapaComponent } from './mapa/mapa.component';
 import { ServicoComponent } from './servico/servico.component';
 import { EstadoComponent } from './estado/estado.component';
 import { PrestadorComponent } from './prestador/prestador.component';
-import { TabelaprecoComponent } from './tabelapreco/tabelapreco.component';
-import { LoginComponent } from './login/login.component';
-import { HomeComponent } from './home/home.component';
-import { UserComponent } from './user/user.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { PostDialogComponent } from './post-dialog/post-dialog.component';
 import { WelcomeComponent } from './welcome/welcome.component';
-
-
-
-
-
 import { MaterialModule } from './material.module';
 import { DataService } from './data/data.service';
 import { AuthService } from './auth.service';
@@ -55,14 +44,9 @@ import { AuthService } from './auth.service';
     ContratanteComponent,
     ConfirmDialogComponent,
     CidadeComponent,
-    MapaComponent,
     ServicoComponent,
     EstadoComponent,
     PrestadorComponent,
-    TabelaprecoComponent,
-    LoginComponent,
-    HomeComponent,
-    UserComponent,
     DashboardComponent,
     PostDialogComponent,
     WelcomeComponent,
