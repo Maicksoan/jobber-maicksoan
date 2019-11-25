@@ -7,9 +7,8 @@ import estadoRouter from './router/estado.router';
 import cidadeRouter from './router/cidade.router';
 import contratanteRouter from './router/contratante.router';
 import servicoRouter from './router/servico.router';
-import tabelaPrecoRouter from './router/tabelapreco.router';
 import prestadorRouter from './router/prestador.router';
-import pedidoRouter from './router/pedido.router';
+
 
 class App {
     public express: express.Application;
@@ -31,9 +30,7 @@ class App {
         this.express.use('/cidades', cidadeRouter);
         this.express.use('/contratantes', contratanteRouter);
         this.express.use('/servicos', servicoRouter);
-        this.express.use('/tabelaprecos', tabelaPrecoRouter);
         this.express.use('/prestadores', prestadorRouter);
-        this.express.use('/pedidos', pedidoRouter);
     }
 }
 
