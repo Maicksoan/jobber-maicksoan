@@ -1,7 +1,73 @@
-<div style="text-align:center">
-    <h1>Você está na área de gerenciamento da Plataforma Jobber</h1>
-    <p>
-     Aqui você podera gerenciar cadastros e visualizar em tempo real informações sobre a plataforma
-    </p>
-  </div>
-  
+<mat-sidenav-content>
+    <mat-card>
+       
+        <div style="text-align:center">
+            <h1>Você está na área de gerenciamento da Plataforma Jobber</h1>
+            <p>
+                Aqui você podera gerenciar cadastros e visualizar em tempo real informações sobre a plataforma
+            </p>
+        </div>
+
+        
+
+        <!-- AREA PRESTADOR -->
+        <mat-sidenav-container class="sidenav-container">
+            <mat-sidenav-content>
+                <mat-card>
+                    <mat-card-title>
+                        <mat-toolbar color="primary">
+                            <h3>Ultimos Prestadores Registrados</h3>
+                            <span class="flex-spacer"></span>
+                        </mat-toolbar>
+                        <mat-progress-bar mode="indeterminate" color="warn" *ngIf="loading"></mat-progress-bar>
+                    </mat-card-title>
+
+                    <mat-card-content>
+                        <table mat-table [dataSource]="prestadores" *ngIf="!msgerror">
+
+                            <!-- Codigo Column -->
+                            
+                            <ng-container matColumnDef="cpf">
+                                <th mat-header-cell *matHeaderCellDef> CPF </th>
+                                <td mat-cell *matCellDef="let prestador"> {{prestador.cpf}} </td>
+                            </ng-container>
+
+                            <!-- Nome Column -->
+                            <ng-container matColumnDef="nome">
+                                <th mat-header-cell *matHeaderCellDef> Nome </th>
+                                <td mat-cell *matCellDef="let prestador"> {{prestador.nome}} </td>
+                            </ng-container>
+
+                            <!-- Nome Column -->
+                            <ng-container matColumnDef="email">
+                                <th mat-header-cell *matHeaderCellDef> Email </th>
+                                <td mat-cell *matCellDef="let prestador"> {{prestador.email}} </td>
+                            </ng-container>
+
+                            <!-- Cidade Column -->
+                            <ng-container matColumnDef="cidade">
+                                <th mat-header-cell *matHeaderCellDef> Cidade/UF </th>
+                                <td mat-cell *matCellDef="let prestador"> {{prestador.cidade.nome}} /
+                                    {{prestador.cidade.estado.sigla}} </td>
+                            </ng-container>
+
+                            <!-- Options Column -->
+                            <ng-container matColumnDef="options">
+                                <th mat-header-cell *matHeaderCellDef> </th>
+                                <td mat-cell *matCellDef="let prestador"> </td>
+                            </ng-container>
+
+                            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                        </table>
+
+                        <div class="panel-error" *ngIf="msgerror">
+                            <img src="assets/erro1.png">
+                            <h1 class="mat-h1">Ocorreu um Erro</h1>
+                            <h1 class="mat-h1">Já estamos corrigindo!</h1>
+                            <button mat-button color="warn" (click)="ngOnInit()">Tentar Novamente</button>
+                        </div>
+                    </mat-card-content>
+                </mat-card>
+            </mat-sidenav-content>
+        </mat-sidenav-container>

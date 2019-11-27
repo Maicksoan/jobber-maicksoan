@@ -32,13 +32,15 @@ export class AuthService {
         window.location.hash = '';
         this.accessToken = authResult.accessToken;
         this.expiresAt = (authResult.expiresIn * 1000) + new Date().getTime();
-        this.router.navigate(['/dashboard']);
+        this.router.navigate(['/']);
       } else if (err) {
         this.router.navigate(['/']);
         console.log(err);
       }
+      
     });
   }
+  
 
   public logout(): void {
     // Remove tokens and expiry time from localStorage
