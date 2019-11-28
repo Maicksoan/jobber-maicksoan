@@ -1,5 +1,5 @@
 <mat-sidenav-container class="sidenav-container">
-    <mat-sidenav #sidenav position="end" mode="over" disableClose="true">
+    <mat-sidenav #sidenav position="end" mode="side" disableClose="true">
         <mat-toolbar>
             <h2>Adicionar Prestador</h2>
             <span class="flex-spacer"></span>
@@ -36,7 +36,7 @@
 
         <mat-toolbar>
             <span class="flex-spacer"></span>
-            <button mat-button (click)="sidenav.close()">Cancelar</button>
+            <button mat-raised-button color="warn" (click)="sidenav.close()">Cancelar</button>
             <button mat-raised-button color="primary" (click)="confirmar()">Confirmar</button>
         </mat-toolbar>
 
@@ -45,14 +45,14 @@
     <mat-sidenav-content>
         <mat-card>
             <mat-card-title>
-                <mat-toolbar color="primary">
+                <mat-toolbar color="accent">
                     <h3>Cadastro de Prestadores</h3>
                     <span class="flex-spacer"></span>
                     <button mat-icon-button (click)="add()">
                         <mat-icon>add</mat-icon>
                     </button>
                 </mat-toolbar>
-                <mat-progress-bar mode="indeterminate" color="warn" *ngIf="loading"></mat-progress-bar>
+                <mat-progress-bar mode="indeterminate" color="primary" *ngIf="loading"></mat-progress-bar>
             </mat-card-title>
 
             <mat-card-content>

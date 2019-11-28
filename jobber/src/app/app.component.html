@@ -1,10 +1,13 @@
-<mat-toolbar color="primary" class="fixed-header">
+<mat-toolbar color="accent" class="fixed-header">
   <mat-toolbar-row>
-    <div>
-      <a routerLink="/">
-        Jobber
-      </a>
-    </div>
+      <div>
+          <a routerLink="/">
+            Jobber
+          </a>
+        </div>
+      <span class="example-spacer"></span>
+      
+    
     <a mat-button *ngIf="auth.isAuthenticated()" routerLink="/prestador">Prestadores</a>
     <a mat-button *ngIf="auth.isAuthenticated()" routerLink="/contratante">Contratantes</a>
     <a mat-button *ngIf="auth.isAuthenticated()" routerLink="/servico">Serviços</a>
